@@ -13,5 +13,5 @@ export const POST = async (request: Request) => {
       brandId: body.brandId,
     },
   })
-  return NextResponse.json(product)
+  return NextResponse.json(product, { status: 201 })
 }
