@@ -2,6 +2,7 @@ import { PrismaClient } from '@prisma/client'
 import AddProduct from './addProduct'
 import DeleteProduct from './deleteProduct'
 import UpdateProduct from './updateProduct'
+import Navbar from '@/components/navbar'
 
 const prisma = new PrismaClient()
 
@@ -28,12 +29,13 @@ const Product = async () => {
 
   return (
     <div>
+      <Navbar />
       <div className='mb-2'>
         <AddProduct brands={brands} />
       </div>
-      <table className='table w-full'>
+      <table className='table w-full table-zebra'>
         <thead>
-          <tr>
+          <tr className='text-lg text-center'>
             <th>#</th>
             <th>Product Name</th>
             <th>Price</th>
@@ -41,7 +43,7 @@ const Product = async () => {
             <th className='text-center'>Action</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='text-center'>
           {products.map((product, index) => (
             <tr key={product.id}>
               <td>{index + 1}</td>

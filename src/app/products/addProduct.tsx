@@ -30,8 +30,8 @@ const AddProduct = ({ brands }: { brands: Brand[] }) => {
     setIsOpen(!isOpen)
   }
   return (
-    <div>
-      <button className='btn' onClick={handleModal}>
+    <div className='py-4'>
+      <button className='btn btn-success btn-sm' onClick={handleModal}>
         Add New
       </button>
       <div className={isOpen ? 'modal modal-open' : 'modal'}>
